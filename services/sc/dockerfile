@@ -1,0 +1,13 @@
+FROM gcc:13 AS build
+WORKDIR /app
+
+COPY algoritmos.c servidor.c algoritmos.h ./
+RUN gcc -O2 -static -o servidor-c servidor.c algoritmos.c
+
+FROM alpine:3.19
+WORKDIR /app
+
+COPY --from=build /app/servidor-c .
+EXPOSE 8001
+
+CMD ["./servidor-c"]

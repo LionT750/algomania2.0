@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>algoritmos</title>
+  <link rel="stylesheet" href="algoritmos.css">
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>algoritmos</h1>
+    </header>
+    <ul>
+      <li>quicksort</li>
+      <li class="ativo">busca binaria</li>
+      <li>arvores rubro-negras</li>
+      <li>dijkstra</li>
+    </ul>
+
+
+    <form id="form-alvo">
+      <h2>linguagem</h2>
+      <div id="linguagens">
+        <input type="radio" id="c" name="linguagem" value="c" class="radios">
+        <label for="c">C</label>
+        <input type="radio" id="java" name="linguagem" value="java" class="radios">
+        <label for="java">Java</label>
+      </div>
+      <div class="dalvo">
+        <input type="number" id="alvo" required>
+        <button type="submit">Enviar</button>
+      </div>
+
+    </form>
+
+    <div id="resultado">
+      <h2>resultado</h2>
+      <p>vetor</p>
+      <span id="vetor"></span>
+      <p>vetor ordenado</p>
+      <span id="vetor-ord"></span>
+      <p>indice ordenado</p>
+      <span id="indice"></span>
+      <p>tempo em milissegundos</p>
+      <span id="milis"></span>
+    </div>
+
+  </div>
+  <script src="algoritmos.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,6 @@
+FROM nginx:alpine
+
+COPY ./algoritmos.html /usr/share/nginx/html/index.html
+COPY ./algoritmos.css /usr/share/nginx/html/algoritmos.css
+COPY ./algoritmos.js /usr/share/nginx/html/algoritmos.js
+EXPOSE 80

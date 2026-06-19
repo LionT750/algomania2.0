@@ -1,0 +1,72 @@
+.container {
+  margin: 0;
+  padding: 10px;
+  background-color: #b9b9b9;
+  color: #0a0a0a;
+  font-size: 24px;
+}
+
+h1, h2 {
+  margin-left: 10px;
+}
+
+p {
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+span {
+  padding: 10px;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #c9c9c9;
+}
+
+li {
+  color: #0a0a0a;
+  padding: 5px 8px 5px 5px;
+}
+
+input, button {
+  background-color: #b9b9b9;
+  color: #0a0a0a;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+button {
+  background-color: #242424;
+  color: #f1f1f1
+}
+
+li:hover, .ativo {
+  color: #f1f1f1;
+  background-color: #0a0a0a;
+}
+
+.form-alvo {
+  padding: 24px;
+}
+
+.dalvo {
+  padding-top: 15px;
+}
+
+.radios {
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  display: inline-grid;
+  place-content: center;
+  cursor: pointer;
+  background-color: #f1f1f1;
+}
+
+.radios:checked {
+  background-image: radial-gradient(circle, #242424 40%, transparent 45%);
+}

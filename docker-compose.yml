@@ -1,0 +1,32 @@
+services:
+  front:
+    build:
+      context: ./front
+      dockerfile: dockerfile
+    ports:
+      - "8080:80"
+    depends_on:
+      - servidor
+  servidor:
+    build:
+      context: ./gateway
+      dockerfile: dockerfile
+    ports:
+      - "8000:8000"
+    depends_on:
+      - servico-java
+      - servico-c
+
+  servico-java:
+    build:
+      context: ./services/sjava
+      dockerfile: dockerfile
+    ports:
+      - "8002:8002"
+
+  servico-c:
+    build:
+      context: ./services/sc
+      dockerfile: dockerfile
+    ports:
+      - "8001:8001"
