@@ -2,6 +2,7 @@
 #include <unistd.h>
 #include <arpa/inet.h>
 #include <sys/socket.h>
+#include <stdio.h>
 
 #include "algoritmos.h"
 
@@ -42,7 +43,20 @@ int main()
 
         int *vetor = malloc(tamanho * sizeof(int));
 
-        recv(novo_sock, vetor, tamanho * sizeof(int), 0);
+        int total = tamanho * sizeof(int);
+        int recebidos = 0;
+
+        while (recebidos < total)
+        {
+            int n = recv(novo_sock,(char *)vetor + recebidos,total - recebidos,0);
+            if (n <= 0)
+            {
+                fprintf(stderr, "Erro recebendo vetor.\n");
+                break;
+            }
+
+            recebidos += n;
+        }
 
         para_little(tamanho, vetor);
 
