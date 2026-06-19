@@ -46,7 +46,8 @@ int main()
         /*The MSG_WAITALL doesnt guarantee full receive of data, signals, errors, and different data types 
         can cause it to return before all data is received.
         If bugs occur again, we must properly wrap this function to ensure that all data is received before proceeding.
-        recv(novo_sock, vetor, tamanho * sizeof(int), MSG_WAITALL); */
+        */
+        recv(novo_sock, vetor, tamanho * sizeof(int), MSG_WAITALL); 
 
         para_little(tamanho, vetor);
 
