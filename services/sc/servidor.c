@@ -2,6 +2,7 @@
 #include <unistd.h>
 #include <arpa/inet.h>
 #include <sys/socket.h>
+#include <stdio.h>
 
 #include "algoritmos.h"
 
@@ -42,7 +43,11 @@ int main()
 
         int *vetor = malloc(tamanho * sizeof(int));
 
-        recv(novo_sock, vetor, tamanho * sizeof(int), 0);
+        /*The MSG_WAITALL doesnt guarantee full receive of data, signals, errors, and different data types 
+        can cause it to return before all data is received.
+        If bugs occur again, we must properly wrap this function to ensure that all data is received before proceeding.
+        */
+        recv(novo_sock, vetor, tamanho * sizeof(int), MSG_WAITALL); 
 
         para_little(tamanho, vetor);
 
